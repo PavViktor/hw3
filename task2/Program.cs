@@ -3,24 +3,24 @@
 A (3,6,8); B (2,1,-7), -> 15.84
 A (7,-5, 0); B (1,-1,9) -> 11.53 */
 
-Console.WriteLine("Введите координаты первой точки");
+Console.WriteLine("Enter the coordinates of the first point");
 bool isParsedX1 = int.TryParse(Console.ReadLine(), out int x1);
 bool isParsedY1 = int.TryParse(Console.ReadLine(), out int y1);
 bool isParsedZ1 = int.TryParse(Console.ReadLine(), out int z1);
 
-Console.WriteLine("Введите координаты второй точки");
+Console.WriteLine("Enter the coordinates of the second point");
 bool isParsedX2 = int.TryParse(Console.ReadLine(), out int x2);
 bool isParsedY2 = int.TryParse(Console.ReadLine(), out int y2);
 bool isParsedZ2 = int.TryParse(Console.ReadLine(), out int z2);
 
 if(!isParsedX1 || !isParsedY1 || !isParsedZ1 || !isParsedX2 || !isParsedY2 || !isParsedZ2)
 {
-    Console.WriteLine("Координаты ввели не корректно");
+    Console.WriteLine("Coordinates entered incorrectly");
     return;
 }
 
 double number = calcDist(x1, y1, z1, x2, y2, z2 );
-Console.WriteLine($"Расстояние между точками = {number}");
+Console.WriteLine($"Distance between points = {number}");
 
 double calcDist(int xa, int ya, int za, int xb, int yb, int zb)
 {

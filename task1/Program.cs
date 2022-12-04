@@ -3,16 +3,20 @@
 14212 -> нет
 12821 -> да
 23432 -> да */
+			
 
-static bool IsPalindrom(string word, bool ignoreCase = true)
-{
-    if (ignoreCase)
-    {
-        word = word.ToLowerInvariant();
+bool isPalindrom(int n) {
+    int reversed = 0, remainder = 0, original = n;
+    
+    while (n != 0) {
+      remainder = n % 10;
+      reversed = reversed * 10 + remainder;
+      n /= 10;
     }
-
-    var inputArray = word.ToArray();
-    var reversedArray = inputArray.Reverse().ToArray();
-
-    return inputArray.SequenceEqual(reversedArray);
-}
+    
+    if (original == reversed)
+      return true;
+    else
+      return false;
+  }
+  
